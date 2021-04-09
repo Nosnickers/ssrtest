@@ -11,9 +11,9 @@ app.get("/", (req, res) => {
   res.status(200).send(renderMarkup(renderToString(SSR)));
 });
 
-app.listen(process.env.PORT || 8000);
-
-console.log('server started')
+app.listen(process.env.PORT || 8000, () => {
+  console.log('Running at http://localhost:8000');
+});
 
 function renderMarkup(html) {
   return `<!DOCTYPE html>
